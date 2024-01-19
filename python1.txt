@@ -1,0 +1,102 @@
+def array_sum(arr):
+    return sum(arr)
+
+arr = [1,2,3,4,5,6,10]
+arr_out = array_sum(arr)
+print("Sum of given array",arr_out)
+
+#############################################################################################
+arr1 = [1,2,3,34,56]
+new_element = 74
+arr1.append(new_element) # appending element to the end of array
+print(arr1)
+element_to_add = 93
+index_to_insert = 2
+arr1.insert(index_to_insert,element_to_add) #adding element in given index
+print(arr1)
+arr1.remove(34) #removing the element 34 from the list 
+print(arr1) 
+arr1.pop(3) # removing the element from index 3
+print(arr1)
+#############################################################################################
+#Function to check two arrays are equal
+def array_equality_check(arr1,arr2):
+    if len(arr1) != len(arr2):
+        return False
+    
+    for i in range(len(arr1)):
+        if arr1[i] != arr2[i]:
+            return False
+    
+    return True
+
+arr1 = [1,2,3,4,5]
+arr2 = [1,2,3,4,9]
+equality_check = array_equality_check(arr1,arr2)
+print("Given strings are equal",equality_check)
+#############################################################################################
+# simple way of checking equality
+def equality_check(arr1,arr2):
+    return arr1 == arr2
+
+arr1 = [1,2,3,4,5]
+arr2 = [1,2,3,4,5]
+equality_check1 = equality_check(arr1,arr2)
+print("Given strings are equal",equality_check1)
+#############################################################################################
+#Reverse the i/p array
+given_array = [9,8,7,6,5]
+reverse_array = given_array[::-1]
+print("Reverse of given array:",reverse_array)
+reverse_array.reverse()
+print("again reversing the array with built-in function",reverse_array)
+#############################################################################################
+def reverse_ip_arr(arr1):
+    n = len(arr1)
+
+    for i in range(n // 2):
+        arr1[i],arr1[n-i-1] = arr1[n-i-1],arr1[i]
+
+my_list = [1,2,3,4,5,6,7,8,9]
+reverse_ip_arr(my_list)
+print("Reverse of given array:",my_list)
+
+#The single slash (/) performs normal division, and the result is always a floating-point number.
+#The double slash (//) is used for floor division. It returns the largest integer less than or equal to the division result.
+#############################################################################################
+arr = [11,12,13,14,15,6,7,8,9,1,89]
+max_value = max(arr)
+print(max_value)
+min_value = min(arr)
+print(min_value)
+#############################################################################################
+#finding the heighest number from the given array
+def find_max_value(arr):
+    if len(arr) < 2:
+        raise ValueError("Given array has less then 2 values")
+
+    max_num = 0
+    for i in arr:
+        if i > max_num:
+            max_num = i
+    return max_num
+
+arr = [1,2897,3,4,5,900,9876]
+out_max_value = find_max_value(arr)
+print("Maximum value in given array:",out_max_value)
+#############################################################################################
+#finding the lowest number from the given string
+def find_min_value(arr):
+    if len(arr) < 2:
+        raise ValueError("print given array contains less then values please check")
+
+    min_value = arr[0]
+
+    for i in arr:
+        if i < min_value:
+            min_value = i
+    return min_value
+
+arr = [6,9,3,4,5,10]
+out = find_min_value(arr)
+print("Minimum value in given arary is ",out)
