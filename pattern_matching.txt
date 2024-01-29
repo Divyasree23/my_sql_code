@@ -1,0 +1,70 @@
+dbutils.widgets.text("Patternsize", "Patternsize", "Pattern Size")
+dbutils.widgets.dropdown("Count", "3", ["1", "2", "3", "4", "5","6","7","8","9","15"])
+
+# Get widget value Python
+count = dbutils.widgets.get("Count")
+num = int(count)
+print(type(num))
+
+#Print a Half Pyramid Pattern
+def print_rightangletriangle_pyramind(num):
+    for i in range(1,num+1):
+        for j in range(1,i+1):
+            print("*",end=" ")
+        print()
+
+print_rightangletriangle_pyramind(num)
+
+#Print a Half Pyramid Pattern
+def inverted_rightangletriangle_pyramind(num):
+    for i in range(num,0,-1):
+        for j in range(i):
+            print("*",end=" ")
+        print()
+
+inverted_rightangletriangle_pyramind(num)
+
+def print_diamond(rows):
+    # Upper half
+    for i in range(1, rows + 1):
+        for j in range(rows - i):
+            print(" ", end=" ")
+        for k in range(2 * i - 1):
+            print("*", end=" ")
+        print()
+
+    # Lower half
+    for i in range(rows - 1, 0, -1):
+        for j in range(rows - i):
+            print(" ", end=" ")
+        for k in range(2 * i - 1):
+            print("*", end=" ")
+        print()
+
+# Example usage with 5 rows
+print_diamond(5)
+
+
+def print_half_diamond(rows):
+    # Upper half
+    for i in range(1, rows + 1):
+        for j in range(rows - i): #rows = 6 and i = 1 mean printing 5 spaces
+            print(" ", end=" ")
+        for k in range(2 * i - 1):
+            print("*", end=" ")
+        print()
+
+# Example usage with 5 rows
+print_half_diamond(num)
+
+def upper_half(num):
+
+    for i in range(1,num + 1):
+        for j in range(num - 1):
+            print(" ",end = " ")
+        for k in range(2 * i - 1):
+            print("*",end = " ")
+        print()
+
+upper_half(5)
+
