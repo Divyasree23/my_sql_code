@@ -100,3 +100,63 @@ def find_min_value(arr):
 arr = [6,9,3,4,5,10]
 out = find_min_value(arr)
 print("Minimum value in given arary is ",out)
+######################################################################################################
+#Check given is a number is even or odd. -- will write code to execute normally tomorrow by passing values dynamically
+def checkEvenOrOdd(num):
+    if type(num) != int:
+        print("Please provide integer value")
+    elif num%2 == 0:
+        print("Given number is Even")
+    else:
+        print("Given number is Odd")
+
+num = 1001
+out = checkEvenOrOdd(num)
+print(out)
+##############################################################################################################
+dbutils.widgets.text("ProcessName", "YourNumber", "Name of the calling process")
+dbutils.widgets.dropdown("State", "1", ["1", "2", "3", "4", "789","10","21","44","67"])
+
+# Get widget value Python
+num = dbutils.widgets.get("State")
+num = int(num)
+print(type(num))
+
+def factorial_num(num1):
+    initial = 1
+    for i in range(1,num1+1):
+        initial *= i
+    return initial
+
+factorial_out = factorial_num(num)
+print("Factorial of given number is",factorial_out)
+###############################################################################################################
+#count occurrences inside a list
+def count_occurrences(lst):
+    count_dict = {}
+
+    #iterate through the list
+    for element in lst:
+        if element in count_dict:
+            count_dict[element] += 1
+        else:
+            count_dict[element] = 1
+    return count_dict
+
+my_list = [1,2,3,4,5,1,2,3,4,5,6,7,8,9,7,8]
+out = count_occurrences(my_list)
+print("Count of occurances in dict",out)
+###########################################################################################################################
+def countVowels(string1):
+    vowels = "aeiouAEIOU"
+    vowel_count = 0
+
+    for char in string1:
+        if char in vowels:
+            vowel_count += 1
+
+    return vowel_count
+
+my_string = "Happy World with Don Happy"
+result = countVowels(my_string)
+print("Number of Vowels:", result)
